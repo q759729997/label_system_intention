@@ -15,11 +15,12 @@ docker load -i labelsystem_intention.tar  # 镜像导入
 - docker镜像启动
 
 ~~~python
-docker run -dit -p 11999:8080 --name intention labelsystem/intention  # 首次启动
-docker run -dit -p 11999:8080 -v /home/d5000/dialogue_system/label_system/label_system_intention/testData.json:/rasa-nlu-trainer/data/testData.json --privileged --name intention labelsystem/intention  # 首次启动，挂载目录
-docker start intention  # 启动
-docker stop intention  # 关闭
-docker rm intention  # 删除
+docker run -dit -p 11999:8080 --name labelsystem_intention labelsystem/intention  # 首次启动
+docker run -dit -p 11999:8080 -v /home/d5000/dialogue_system/label_system/label_system_intention/testData.json:/rasa-nlu-trainer/data/testData.json --privileged --name labelsystem_intention labelsystem/intention  # 首次启动，挂载目录
+docker start labelsystem_intention  # 启动
+docker stop labelsystem_intention  # 关闭
+docker logs labelsystem_intention  # 查看日志
+docker rm labelsystem_intention  # 删除
 ~~~
 
 ## 依赖环境安装
